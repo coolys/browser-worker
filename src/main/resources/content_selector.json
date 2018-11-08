@@ -1,0 +1,135 @@
+[
+  {
+    "name": "datePublished",
+    "selector": "time",
+    "host": "msn.com",
+    "level":1,
+    "configName": "",
+    "attr": "datetime",
+    "dataType": "STRING"
+  },
+
+  {
+    "name": "logo",
+    "selector": "span.partnerarticlelogo img",
+    "host": "msn.com",
+    "level":1,
+    "configName": "",
+    "attr": "abs:src",
+    "dataType": "STRING"
+  },
+
+  {
+    "name": "html",
+    "selector": "article",
+    "removeTags":"span.attribution,.caption.attribution,p[text=Read more news: ]",
+    "host": "msn.com",
+    "level":1,
+    "configName": "",
+    "attr": "html",
+    "dataType": "STRING"
+  },
+  {
+    "name": "redirectUrl",
+    "selector": "link[rel=canonical]",
+    "configName": "",
+    "level":1,
+    "host": "msn.com",
+    "attr": "abs:href",
+    "dataType": "STRING"
+  },
+  {
+    "name": "publisherUrl",
+    "selector": ".partnerlogo-img a",
+    "configName": "",
+    "level":1,
+    "host": "msn.com",
+    "attr": "abs:href",
+    "dataType": "STRING"
+  },
+  {
+    "name": "publisherName",
+    "selector": ".partnerlogo-img img",
+    "configName": "",
+    "level":1,
+    "host": "msn.com",
+    "attr": "alt",
+    "dataType": "STRING"
+  },
+
+
+  {
+    "name": "author",
+    "selector": ".authorname-txt",
+    "configName": "",
+    "level":1,
+    "host": "msn.com",
+    "attr": "text",
+    "dataType": "STRING"
+  },
+
+  {
+    "name": "url",
+    "selector": "a[href!=null]:has(span.sourcename img)",
+    "configName": "",
+    "level":0,
+    "host": "msn.com",
+    "attr": "abs:href",
+    "dataType": "STRING"
+  },
+  {
+    "name": "icon",
+    "selector": "a[href!=null]:has(span.sourcename img) span.sourcename img",
+    "configName": "",
+    "level":0,
+    "host": "msn.com",
+    "attr": "abs:src",
+    "dataType": "STRING"
+  },
+  {
+    "name": "publisherName",
+    "selector": "a[href!=null]:has(span.sourcename img) span.sourcename",
+    "configName": "",
+    "level":0,
+    "host": "msn.com",
+    "attr": "text",
+    "dataType": "STRING"
+  },
+  {
+    "name": "description",
+    "selector": "meta[property=og:description]",
+    "attr": "content",
+    "level":1,
+    "configName": "",
+    "host": "msn.com",
+    "dataType": "STRING"
+  },
+  {
+    "name": "description",
+    "selector": "meta[name=og:description]",
+    "attr": "content",
+    "level":1,
+    "configName": "",
+    "host": "msn.com",
+    "dataType": "STRING"
+  },
+  {
+    "name": "description",
+    "selector": "meta[name=description]",
+    "attr": "content",
+    "level":1,
+    "configName": "",
+    "host": "msn.com",
+    "dataType": "STRING"
+  },
+  {
+    "name": "description",
+    "selector": "meta[property=description]",
+    "attr": "content",
+    "level":1,
+    "configName": "",
+    "host": "msn.com",
+    "dataType": "STRING"
+  }
+
+]

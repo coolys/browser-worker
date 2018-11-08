@@ -1,0 +1,15 @@
+# Common configuration shared between all applications
+configserver:
+    name: Docker Simlife Registry
+    status: Connected to the Simlife Registry running in Docker
+
+simlife:
+    security:
+        authentication:
+            jwt:
+                secret: my-secret-token-to-change-in-production
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://admin:${simlife.registry.password}@simlife-registry:8761/eureka/

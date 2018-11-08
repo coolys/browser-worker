@@ -1,0 +1,35 @@
+[
+  {
+    "queueName": "crawler.start",
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "autoAck": false,
+    "reQueueFailures": false,
+    "forceCreateChannel":false,
+    "forceCreateConnection":false
+  },
+  {
+
+    "queueName": "crawler.next",
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "autoAck": false,
+    "reQueueFailures": false,
+    "forceCreateChannel":false,
+    "forceCreateConnection":false
+  },
+  {
+
+    "queueName": "crawler.category.indexing",
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "autoAck": false,
+    "reQueueFailures": false,
+    "forceCreateChannel":false,
+    "forceCreateConnection":false
+  }
+]
+

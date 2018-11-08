@@ -1,0 +1,27 @@
+[
+  {
+    "name": "SourceWorker",
+    "queueName": "crawler.start",
+    "numberThreads": 10,
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "autoAck": false,
+    "reQueueFailures": false,
+    "forceCreateChannel":false,
+    "forceCreateConnection":false
+  },
+  {
+    "name": "SeedWorker",
+    "queueName": "crawler.next",
+    "numberThreads": 10,
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "autoAck": false,
+    "reQueueFailures": false,
+    "forceCreateChannel":false,
+    "forceCreateConnection":false
+  }
+]
+

@@ -1,0 +1,322 @@
+{
+  "id" : null,
+  "allowExternalUrl" : false,
+  "archiveLevel" : 2,
+  "totalLevel" : 2,
+  "destination" : "CATEGORY_INDEXER",
+  "url" : "https://baotintuc.vn/suc-khoe-564ct0.htm",
+  "name" : "Sức khỏe",
+  "postType" : "ARTICLE",
+  "configFetchEngines" : [ {
+    "id" : null,
+    "docType" : null,
+    "engine" : "HTTP_CLIENT",
+    "domain" : "baotintuc.vn",
+    "level" : 0,
+    "name" : "baotintuc.vn fetch engine"
+  }, {
+    "id" : null,
+    "docType" : null,
+    "engine" : "HTTP_CLIENT",
+    "domain" : "baotintuc.vn",
+    "level" : 1,
+    "name" : "baotintuc.vn fetch engine"
+  } ],
+  "metas" : [ {
+    "id" : null,
+    "category" : "Sức khỏe",
+    "categorySlug" : null,
+    "channelType" : "CRAWL_FEED",
+    "countryCode" : "vi",
+    "languageCode" : "vi-vn",
+    "logo" : "https://4-stc-laban.zdn.vn/largeicons/baotintuc.vn-1414159745.png",
+    "name" : "Sức khỏe",
+    "publisherName" : "Báo Tin Tức",
+    "postType" : "ARTICLE",
+    "rankingCountry" : 1,
+    "siteDomain" : "baotintuc.vn",
+    "siteUrl" : "http://baotintuc.vn/",
+    "url" : "https://baotintuc.vn/suc-khoe-564ct0.htm",
+    "tag" : null,
+    "tagSlug" : null,
+    "targetQueueChannel" : null,
+    "topicSlugs" : null,
+    "topics" : null,
+    "destination" : "CATEGORY_INDEXER",
+    "label" : "Sức khỏe_baotintuc.vn"
+  } ],
+  "siteActionConfigs" : [ ],
+  "configMappings" : [ {
+    "id" : null,
+    "domain" : "baotintuc.vn",
+    "label" : "baotintuc.vn mapping config",
+    "configGroups" : [ {
+      "id" : null,
+      "currentLevel" : 0,
+      "name" : "baotintuc.vn config group level 0",
+      "host" : "baotintuc.vn",
+      "label" : "baotintuc.vn config group level 0",
+      "expectResultType" : "ARRAY",
+      "mappings" : [ {
+        "id" : null,
+        "name" : "url",
+        "selector" : "h3 a",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 0",
+        "attr" : "abs:href",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "url",
+        "selector" : "h2 a",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 0",
+        "attr" : "abs:href",
+        "dataType" : "STRING"
+      } ]
+    }, {
+      "id" : null,
+      "currentLevel" : 1,
+      "name" : "baotintuc.vn config group level 1",
+      "host" : "baotintuc.vn",
+      "label" : "baotintuc.vn config group level 1",
+      "expectResultType" : "OBJECT",
+      "mappings" : [ {
+        "id" : null,
+        "name" : "images",
+        "selector" : ".content-btt img",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "abs:src",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "name",
+        "selector" : ".newsdetail h1",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "text",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[property=og:pubdate]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "keywords",
+        "selector" : "meta[property=keywords]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "description",
+        "selector" : "meta[name=description]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "keywords",
+        "selector" : "meta[name=keywords]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "texts",
+        "selector" : ".content-btt p",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "text",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[name=pubdate]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "thumbnailUrl",
+        "selector" : "meta[property=og:image]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "thumbnailUrl",
+        "selector" : "meta[property=image]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "thumbnailUrl",
+        "selector" : "meta[name=og:image]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "thumbnailUrl",
+        "selector" : "meta[name=image]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "author",
+        "selector" : "meta[name=author]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[property=article:published_time]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "keywords",
+        "selector" : "meta[property=og:keywords]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[property=published_time]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[name=og:pubdate]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "description",
+        "selector" : "meta[name=og:description]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[name=article:published_time]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "keywords",
+        "selector" : "meta[name=og:keywords]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[property=pubdate]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "description",
+        "selector" : "meta[property=og:description]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "author",
+        "selector" : "meta[property=author]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "author",
+        "selector" : "meta[property=og:author]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "datePublished",
+        "selector" : "meta[name=published_time]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "description",
+        "selector" : "meta[property=description]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      }, {
+        "id" : null,
+        "name" : "author",
+        "selector" : "meta[name=og:author]",
+        "host" : "baotintuc.vn",
+        "configName" : "baotintuc.vn getfeed level 1",
+        "attr" : "content",
+        "dataType" : "STRING"
+      } ]
+    } ]
+  } ],
+  "targetSystem" : null,
+  "destinationFetchEngines" : [ {
+    "id" : null,
+    "docType" : null,
+    "engine" : "HTTP_CLIENT",
+    "domain" : "baotintuc.vn",
+    "level" : 0,
+    "name" : "baotintuc.vn fetch engine"
+  }, {
+    "id" : null,
+    "docType" : null,
+    "engine" : "HTTP_CLIENT",
+    "domain" : "baotintuc.vn",
+    "level" : 1,
+    "name" : "baotintuc.vn fetch engine"
+  } ],
+  "destinationMetas" : [ ],
+  "destinationSiteConfigs" : [ ],
+  "destinationConfigMappings" : [ ]
+}
