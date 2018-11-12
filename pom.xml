@@ -75,7 +75,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.crawlerbot</groupId>
-            <artifactId>msn-parser</artifactId>
+            <artifactId>news-crawler-parser</artifactId>
             <version>1.0.1-SNAPSHOT</version>
             <exclusions>
 

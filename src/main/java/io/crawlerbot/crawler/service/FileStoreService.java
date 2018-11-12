@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 
 public class FileStoreService {
-    private static final Logger logger = LoggerFactory.getLogger(FileStoreService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(FileStoreService.class);
     // read from properties
-    private static String localPath = "/var/log/data/";
+    private static final String LOGCAL_PATH = "/var/log/data/";
 
     public String getClassPath(String fileName) {
         //ClassLoader classLoader = getClass().getClassLoader();
@@ -29,10 +29,9 @@ public class FileStoreService {
             br = new BufferedReader(new FileReader(getClassPath(fileName)));
             result = gson.fromJson(br, CrawlLine.class);
             if (result != null) {
-                System.out.print(result);
+               LOGGER.info("result: {}", result);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             return result;
         } finally {
             if (br != null) {
@@ -40,7 +39,7 @@ public class FileStoreService {
                     br.close();
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
-                    e.printStackTrace();
+
                 }
             }
         }
@@ -60,7 +59,6 @@ public class FileStoreService {
                 System.out.print(result);
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             return result;
         } finally {
             if (br != null) {
@@ -68,7 +66,7 @@ public class FileStoreService {
                     br.close();
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
-                    e.printStackTrace();
+
                 }
             }
         }
@@ -78,86 +76,77 @@ public class FileStoreService {
     }
 
     public static boolean writeHtmlToFile(String content, String fileName, String domain) {
-        try {
-
-            //logger.info("start writeHtmlToFile");
+        try {            
             String domainSlug = new Slugify().slugify(domain);
             File file = new File("/var/log/data/"  +domainSlug +"/" + fileName);
-            FileUtils.writeStringToFile(file, content, "utf-8");
-            //logger.info("[+] writeHtmlToFile: {}", fileName);
+            FileUtils.writeStringToFile(file, content, "utf-8");            
             return true;
-        } catch (Exception ex) {
+        } catch (IOException ex) {
+            return false;
+        }
+    }
+    
+     public static boolean writeHtmlToFile(String content, String fileName, String domain, String languageCode) {
+        try {
+            
+            String domainSlug = new Slugify().slugify(domain);
+            File file = new File("/var/log/data/"  +domainSlug +"/"  + languageCode +"/" + fileName);
+            FileUtils.writeStringToFile(file, content, "utf-8");            
+            return true;
+        } catch (IOException ex) {
             return false;
         }
     }
 
     public static boolean writeHtmlToFile(String content, String fileName, String domain, WebData webData) {
-        try {
-
-            //logger.info("start writeHtmlToFile");
+        try {            
             Meta meta = webData.getChannel().getMetas().iterator().next();
             String domainSlug = new Slugify().slugify(domain);
             File file = new File("/var/log/data/"  +domainSlug +"/" + meta.getLanguageCode() + "/" + fileName);
-            FileUtils.writeStringToFile(file, content, "utf-8");
-            //logger.info("[+] writeHtmlToFile: {}", fileName);
+            FileUtils.writeStringToFile(file, content, "utf-8");            
             return true;
-        } catch (Exception ex) {
+        } catch (IOException ex) {
             return false;
         }
     }
 
     public static String writeJsonFile(String fileName, WebData resultData) {
-        try {
-
-            //logger.info("start writing local file with filename: {}", fileName);
+        try {            
             Meta meta = resultData.getChannel().getMetas().iterator().next();
             String domainSlug =  new Slugify().slugify(meta.getSiteDomain());
-
             FileContent fileContent = new FileContent();
             fileContent.setContent(JsonUtils.toPrettyString(resultData));
-            File file = new File(localPath + domainSlug + "/"+  meta.getLanguageCode() +"/" + fileName);
+            File file = new File(LOGCAL_PATH + domainSlug + "/"+  meta.getLanguageCode() +"/" + fileName);
             FileUtils.writeStringToFile(file, fileContent.getContent(), "utf-8");
             return fileName;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            //logger.info("[-] Exception  writeLocalFile: {}, detail: {}", fileName, ex.toString());
+        } catch (IOException ex) {            
             return null;
         }
     }
 
     public static String writeJsonFile(String fileName, DataFeed resultData) {
-        try {
-
-            //logger.info("start writing local file with filename: {}", fileName);
+        try {            
             String domainSlug =  new Slugify().slugify(resultData.getPublisher().getDomain());
-
             FileContent fileContent = new FileContent();
             fileContent.setContent(JsonUtils.toPrettyString(resultData));
-            File file = new File(localPath + domainSlug + "/"+  fileName);
-            FileUtils.writeStringToFile(file, fileContent.getContent(), "utf-8");
-            //String jsonPath = uploadJSONContent(fileName, fileContent);
+            File file = new File(LOGCAL_PATH + domainSlug + "/"+  fileName);
+            FileUtils.writeStringToFile(file, fileContent.getContent(), "utf-8");            
             return fileName;
-        } catch (Exception ex) {
-            //logger.info("[-] Exception  writeLocalFile: {}, detail: {}", fileName, ex.toString());
+        } catch (IOException ex) {            
             return null;
         }
     }
 
     public static String writeLocalFile(String fileName, WebData resultData) {
-        try {
-
-            //logger.info("start writing local file with filename: {}", fileName);
+        try {            
             Meta meta = resultData.getChannel().getMetas().iterator().next();
             String domainSlug =  new Slugify().slugify(meta.getSiteDomain());
-
             FileContent fileContent = new FileContent();
             fileContent.setContent(JsonUtils.toPrettyString(resultData));
-            File file = new File(localPath + domainSlug + "/"+  fileName);
-            FileUtils.writeStringToFile(file, fileContent.getContent(), "utf-8");
-            //String jsonPath = uploadJSONContent(fileName, fileContent);
+            File file = new File(LOGCAL_PATH + domainSlug + "/"+  fileName);
+            FileUtils.writeStringToFile(file, fileContent.getContent(), "utf-8");            
             return fileName;
-        } catch (Exception ex) {
-            //logger.info("[-] Exception  writeLocalFile: {}, detail: {}", fileName, ex.toString());
+        } catch (IOException ex) {            
             return null;
         }
     }
