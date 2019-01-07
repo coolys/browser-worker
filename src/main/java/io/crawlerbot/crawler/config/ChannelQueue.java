@@ -1,8 +1,8 @@
 package io.crawlerbot.crawler.config;
 
 public class ChannelQueue {
-    public static final String CRAWLER_INPUT = "crawler.start";
-    public static final String CRAWLER_NEXT ="crawler.next" ;
+    public static final String CRAWLER_INPUT = "news.crawler.start";
+    public static final String CRAWLER_NEXT ="news.crawler.next" ;
 
     public static final String CRAWLER_NOW ="crawler.now" ;
 
