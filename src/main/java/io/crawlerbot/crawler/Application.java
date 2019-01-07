@@ -17,9 +17,9 @@ public class Application {
     }
     public static void main(String[] argv) throws Exception {
         Long id = System.currentTimeMillis();
-        System.setProperty("log.name", "msn-crawler-worker-" + id + ".log");
+        System.setProperty("log.name", "news-crawler-worker-" + id + ".log");
         System.setProperty("workerId", id.toString());
-        System.setProperty("appName", "msn-crawler-worker");
+        System.setProperty("appName", "news-crawler-worker");
         new Application().start();
     }
 
