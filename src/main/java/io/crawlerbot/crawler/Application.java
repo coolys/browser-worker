@@ -11,7 +11,7 @@ public class Application {
 
     private final LoggerFactory logger = new LoggerFactory(Application.class);
     private void start() {
-        DestinationSystem
+
         ApplicationProperties applicationProperties = new ApplicationProperties();
         logger.info("applicationProperties: {}", applicationProperties);
         SeedWorker seedWorker = new SeedWorker(applicationProperties);
