@@ -103,6 +103,12 @@
             </exclusions>
         </dependency>
 
+
+        <dependency>
+            <groupId>io.github.crawlerbot</groupId>
+            <artifactId>crawler-data-model</artifactId>
+            <version>0.1.1-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.github.slugify</groupId>
             <artifactId>slugify</artifactId>

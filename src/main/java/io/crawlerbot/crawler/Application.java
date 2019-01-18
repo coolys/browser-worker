@@ -1,5 +1,6 @@
 package io.crawlerbot.crawler;
 
+import com.crawler.config.domain.enumeration.DestinationSystem;
 import io.crawlerbot.crawler.config.ApplicationProperties;
 import io.crawlerbot.crawler.logger.LoggerFactory;
 import io.crawlerbot.crawler.messaging.workers.SourceWorker;
@@ -10,6 +11,7 @@ public class Application {
 
     private final LoggerFactory logger = new LoggerFactory(Application.class);
     private void start() {
+        DestinationSystem
         ApplicationProperties applicationProperties = new ApplicationProperties();
         logger.info("applicationProperties: {}", applicationProperties);
         SeedWorker seedWorker = new SeedWorker(applicationProperties);

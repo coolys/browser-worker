@@ -56,7 +56,7 @@ public class CrawlerService {
     }
 
     public void sendToIndexing(WebData crawlLine) {
-        //logger.info("[+] send to indexing: {}", crawlLine);
+        logger.info("[+] send to indexing: {}", crawlLine.getChannel().getDestination());
         Channel channel = crawlLine.getChannel();
         MessagePayLoad messagePayLoad = new MessagePayLoad();
        // messagePayLoad.setCrawlLine(crawlLine);
