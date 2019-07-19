@@ -1,2 +1,2 @@
-# crawler-application
+# browser worker
 
